@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script>window.adobeDataLayer = window.adobeDataLayer || [];</script>
+    <script>
+        window.adobeDataLayer.push({
+            "event": "page track",
+            "page": {
+                "experienceType": "desktop",
+                "is404": false,
+                "lang": "english",
+                "name": "Homepage",
+                "sitesection1": null,
+                "sitesection2": null,
+                "sitesection3": null,
+                "sitesection4": null,
+                "test": null,
+                "group": null
+            },
+            "user": {
+                "loginStatus": "not logged in",
+                "userType": "employee",
+                "groupId": null,
+                "carrierId": null,
+                "hsid": null,
+                "rallyId": null,
+                "patientId": null,
+                "payerGroup": null,
+                "accountId": null,
+                "memberId": null
+            }
+});
+    </script>
+    <script>
+        function linkTrack(element) {
+            let linkName = element.textContent;
+            let linkURL = element.href;
+            window.adobeDataLayer.push({
+                "event": "link track",
+                "link": {
+                    "name": linkName,
+                    "location": null,
+                    "type": "internal",
+                    "destinationURL": linkURL
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Tagging Practice Homepage</h1>
+    <a onclick="linkTrack(this)" href="product-page.html" id="navLink1">Product Page</a>
+    <a onclick="linkTrack(this)" href="ifame-content.html" id="navLink1">iFrame Page</a>
+    <div id="specialElement" style="border:1px black solid; display: block; width: 200px; margin: 25px;"><p>Special element for tracking</p>
+    </div>
+</body>
+</html>
