@@ -50,6 +50,18 @@
             });
         }
     </script>
+    <script>
+        function setUserAttribute(element) {
+            console.log(element);
+            let attributeVlaue = element.textContent;
+            window.adobeDataLayer.push({
+                "event": "set attribute",
+                "user": {
+                    attributeValue: attributeVlaue
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <h1>Tagging Practice Homepage</h1>
@@ -58,5 +70,10 @@
     <div id="specialElement" style="border:1px black solid; display: block; width: 200px; margin: 25px;"><p>Special element for tracking</p>
     </div>
     <iframe src="iframe-content.html" style="height:200px;width:300px;"></iframe>
+
+    <p>Engagments to change user attributes:</p>
+    <button onclick="setUserAttribute(this)">Attribute A</button>
+    <button onclick="setUserAttribute(this)">Attribute B</button>
+    <button onclick="setUserAttribute(this)">Attribute C</button>
 </body>
 </html>
